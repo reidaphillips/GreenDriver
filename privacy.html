@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#14181a">
+<meta name="description" content="Android apps for gig delivery drivers. Mileage, real pay and tax paperwork, plus a compass that tells you when it is wrong.">
+<title>Mileage Tracker Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Green<span class="accent">Driver</span></a>
+    <nav>
+      <a href="greendriver.html">Mileage Tracker</a>
+      <a href="compass.html">Compass GD</a>
+    </nav>
+  </div>
+</header>
+<div class="ticks"></div>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="prose">
+        <p class="eyebrow">GreenDriver Mileage Tracker</p>
+        <h1>Privacy Policy</h1>
+
+        <div class="meta">
+          <span>Last updated: 11 October 2026</span>
+          <span>Applies to: GreenDriver Mileage Tracker for Android (app.flexlayer.cc)</span>
+        </div>
+
+        <div class="summary">
+          <ul>
+            <li>Your trips, pay and expenses stay on your phone. There is no account and no server.</li>
+            <li>We never receive your data, never sell it, and never share it for advertising.</li>
+            <li>Maps and one optional setting reach the internet. Both are described below.</li>
+            <li>Uninstalling the app deletes everything.</li>
+          </ul>
+        </div>
+
+        <h2>The short version</h2>
+        <p>
+          GreenDriver is built to keep your data on your own phone. There is no user account, no
+          company server and no cloud database. Almost everything this policy has to say follows
+          from that one design choice.
+        </p>
+
+        <h2>What the app records, and where it stays</h2>
+
+        <h3>Location</h3>
+        <p>
+          While a trip is running, the app uses your phone's GPS to record mileage. This is
+          stored only in a local database on your device. It is never transmitted to us or to
+          any server we operate — because we do not operate one.
+        </p>
+        <p>
+          <b>Background location</b> is required because tracking must continue with the screen
+          off and while you are away from the vehicle delivering on foot. Without it, every trip
+          would stop recording the moment your screen turned off.
+        </p>
+
+        <h3>Trip and financial records</h3>
+        <p>
+          Pay, expenses, receipt photos, vehicle information and mileage logs you enter are
+          stored locally on your device in the same local database.
+        </p>
+
+        <h3>Addresses</h3>
+        <p>
+          To fill in a trip's start and destination automatically, the app asks Android's own
+          operating-system service to convert GPS coordinates into a street address. On most
+          phones that system service may contact Google's geocoding servers, using only the
+          coordinates. That request is made by Android, not by this app. You can also type an
+          address by hand instead.
+        </p>
+
+        <h3>Maps</h3>
+        <p>
+          Viewing a trip on a map requires map images from a map provider, and the request
+          reveals the area of the map you are looking at — as it does for any online map. By
+          default those images come from OpenStreetMap; if you switch to a Google map or
+          satellite layer in Settings, they come from Google's Maps service instead. No map is
+          loaded unless you open one.
+        </p>
+
+        <h3>"Snap route to roads" — off by default</h3>
+        <p>
+          GPS wanders slightly, so a recorded line does not sit exactly on the road. If you turn
+          this setting on, opening a trip's map sends up to about 100 of that trip's own GPS
+          coordinates to <b>router.project-osrm.org</b>, a public routing service run by the OSRM
+          project, which returns the line aligned to the road network.
+        </p>
+        <p>
+          <b>This is the only feature in the app that sends your trip data to anyone else.</b> It
+          is cosmetic, it never changes the mileage that was recorded, and it is off unless you
+          switch it on. With it off, your coordinates are never assembled into a request at all.
+        </p>
+
+        <h3>Receipt and document scanning</h3>
+        <p>
+          Gas receipts and schedule screenshots are read using on-device text recognition
+          (Google's ML Kit, running entirely on your phone). No image or extracted text is
+          uploaded as part of this feature. The camera used for scanning belongs to Google Play
+          Services, which runs that screen itself — <b>GreenDriver does not hold camera
+          permission at all</b>.
+        </p>
+
+        <h3>Backup, if you turn it on</h3>
+        <p>
+          If you enable backup and choose a folder, including a cloud folder, the app writes a
+          backup file to that location using Android's standard file picker. That upload, if
+          any, goes wherever <i>you</i> chose. We have no backup server, and this only happens if
+          you set it up.
+        </p>
+
+        <h3>Crash reports, if you turn them on</h3>
+        <p>
+          The app includes an optional, <b>off by default</b> crash-reporting switch. If enabled,
+          basic technical information about crashes and errors — not your trip data, not your
+          location — is sent to Firebase Crashlytics, a Google service, to help find and fix
+          bugs. You can turn it off in the same place you turned it on. The switch is hidden
+          entirely in builds where crash reporting is not configured.
+        </p>
+
+        <h3>Feedback you send</h3>
+        <p>
+          The in-app feedback button opens your own email app with a message addressed to the
+          developer, pre-filled with your app version and device model. Nothing is sent
+          until you review and choose to send that email yourself.
+        </p>
+
+        <h2>What we do not do</h2>
+        <ul>
+          <li>No user accounts, so no names, passwords or sign-in information.</li>
+          <li>
+            We never receive your data ourselves. We do not sell it, and we do not share it with
+            anyone for advertising, marketing or profiling. The only time any of your trip data
+            reaches a third party is the optional road-snapping setting described above, and the
+            map-image requests needed to draw a map you have opened.
+          </li>
+          <li>No tracking across other apps or websites.</li>
+          <li>No ads and no advertising ID.</li>
+        </ul>
+
+        <h2>Permissions the app requests, and why</h2>
+        <ul>
+          <li>
+            <b>Location (precise, approximate and background)</b> — to log mileage while a trip
+            is running, including when the app is not in the foreground and while you are away
+            from the vehicle on foot.
+          </li>
+          <li>
+            <b>Bluetooth (connect)</b> — to talk to your car's Bluetooth and to an OBD-II adapter
+            if you use one. The app reads only devices you have already paired yourself; it never
+            scans for nearby devices and does not request a scanning permission.
+          </li>
+          <li>
+            <b>Notifications</b> — the ongoing-trip notification that background tracking
+            requires, and the scheduled block alarm.
+          </li>
+          <li>
+            <b>Alarms and full-screen alerts</b> — so a scheduled block alarm can wake the screen
+            at the right minute, like a clock app.
+          </li>
+          <li>
+            <b>Ignore battery optimisation (optional prompt)</b> — the app can offer you the
+            system screen that exempts it from battery restrictions, because those restrictions
+            silently stop mileage recording. The app only ever opens the prompt; your answer is
+            yours.
+          </li>
+          <li>
+            <b>Internet and network state</b> — to fetch map images when you open a map, and to
+            tell you the map is offline rather than showing an empty square.
+          </li>
+        </ul>
+        <p>
+          The app does <b>not</b> request camera permission, Bluetooth scanning, activity
+          recognition, or any sensor permission. Drive detection uses the accelerometer, which
+          requires none.
+        </p>
+
+        <h2>Data deletion</h2>
+        <p>
+          All data lives on your device, so uninstalling the app deletes it. There is no account
+          to close and no server-side copy to request deletion of — except any crash reports
+          already sent to Firebase if you had crash reporting switched on, which Google's own
+          Firebase privacy documentation explains how to request deletion of.
+        </p>
+
+        <h2>Children</h2>
+        <p>
+          GreenDriver is a tool for working drivers. It is not directed at children and we do not
+          knowingly collect information from anyone under 13.
+        </p>
+
+        <h2>Changes to this policy</h2>
+        <p>
+          If any data practice described here changes, this page is updated before that version
+          of the app ships, and the date at the top changes with it.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          Questions about this policy can be sent through the developer contact link on
+          the app's Google Play listing.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>GreenDriver · Spokane, Washington</span>
+    <span>
+      <a href="index.html">Home</a> ·
+      <a href="greendriver.html">Mileage Tracker</a> ·
+      <a href="terms.html">Terms</a>
+    </span>
+  </div>
+</footer>
+</body>
+</html>

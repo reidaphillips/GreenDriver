@@ -1,0 +1,476 @@
+/*
+  GreenDriver / Compass GD — shared styles.
+
+  Committed single-theme on purpose: both products are dark instruments, and the whole visual
+  idea is a dashboard at 4am, which is when these drivers are actually working. Every colour is
+  therefore stated explicitly rather than inherited, so the page holds on any host background.
+*/
+
+:root {
+  /* Charcoal biased slightly green, so the ground looks chosen rather than defaulted. */
+  --ground: #14181a;
+  --raised: #1c2124;
+  --raised-2: #232a2d;
+  --line: #2e3639;
+
+  --ink: #e8edea;
+  --ink-dim: #a3afab;
+  --ink-mute: #76827f;
+
+  --green: #3fdc4f;
+  --green-deep: #1f8a2b;
+  --red: #e2392f;
+  --amber: #ffb300;
+
+  --display: "Barlow Condensed", "Oswald", Impact, sans-serif;
+  --body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --maxw: 1080px;
+  --gutter: clamp(16px, 4vw, 28px);
+}
+
+* { box-sizing: border-box; }
+
+/* Belt and braces against a sideways scrollbar: one long unbroken string anywhere in the page
+   would otherwise push the whole body wider than the phone and break every layout below. */
+html { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: clamp(16px, 0.4vw + 15px, 17.5px);
+  line-height: 1.62;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  /* Scales from 16px on a small phone to 28px on a desktop, so the text never runs to the
+     bezel and never floats absurdly far from it. */
+  padding-inline: var(--gutter);
+}
+
+/* ---------------------------------------------------------------- bars */
+
+.topbar {
+  border-bottom: 1px solid var(--line);
+  background: var(--ground);
+}
+.topbar .wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-block: 14px;
+  flex-wrap: wrap;
+}
+.wordmark {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.wordmark .accent { color: var(--green); }
+.topbar nav {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+/* Padded to a real finger target. Bare 14px text is about 10px tall, which is roughly a
+   quarter of the 44px a thumb actually needs. */
+.topbar nav a {
+  color: var(--ink-dim);
+  padding: 9px 10px;
+  border-radius: 8px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.topbar nav a:hover { background: var(--raised); text-decoration: none; }
+.topbar nav a[aria-current="page"] { color: var(--ink); }
+
+/* The hairline of gauge ticks that runs under the header — the one piece of pure
+   instrument-panel ornament on the page, and it earns its place by being the motif both
+   products share: a speedometer arc and a compass rose are the same ruled edge. */
+.ticks {
+  height: 10px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--line) 0 1px,
+    transparent 1px 11px
+  );
+  opacity: 0.8;
+}
+
+/* ---------------------------------------------------------------- type */
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.05;
+  text-wrap: balance;
+  margin: 0;
+  letter-spacing: 0.005em;
+}
+h1 { font-size: clamp(32px, 8vw, 60px); text-transform: uppercase; }
+h2 { font-size: clamp(23px, 4.6vw, 33px); text-transform: uppercase; }
+h3 { font-size: 20px; }
+
+p { margin: 0; max-width: 62ch; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin: 0;
+}
+
+.lede { font-size: clamp(17px, 1vw + 15px, 19px); color: var(--ink-dim); }
+
+section { padding-block: clamp(34px, 7vw, 60px); }
+section + section { border-top: 1px solid var(--line); }
+.stack { display: flex; flex-direction: column; gap: 18px; }
+.stack-sm { display: flex; flex-direction: column; gap: 10px; }
+
+/* ---------------------------------------------------------------- landing tiles */
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 18px;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(18px, 4vw, 26px);
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: inherit;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+.tile:hover { text-decoration: none; transform: translateY(-2px); }
+.tile--gd:hover { border-color: var(--green); }
+.tile--cp:hover { border-color: var(--red); }
+
+.tile img {
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+}
+.tile h2 { font-size: 30px; }
+.tile p { font-size: 15px; color: var(--ink-dim); }
+
+.tile-price {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink);
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+.tile-go {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 15px;
+}
+.tile--gd .tile-go { color: var(--green); }
+.tile--cp .tile-go { color: var(--red); }
+
+/* ---------------------------------------------------------------- product hero */
+
+.hero {
+  display: flex;
+  gap: clamp(18px, 3vw, 26px);
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-block: clamp(28px, 6vw, 48px) clamp(26px, 5vw, 40px);
+}
+.hero img {
+  width: 104px;
+  height: 104px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  flex: none;
+}
+.hero-text { flex: 1 1 320px; display: flex; flex-direction: column; gap: 12px; }
+
+/* ---------------------------------------------------------------- spec sheet */
+
+/*
+  Label/value rows rather than feature cards. Drivers read spec sheets — for vehicles, for
+  blocks, for pay — so the format is one they already parse, and it keeps a long feature list
+  scannable instead of turning it into twelve identical rounded boxes.
+*/
+.spec { display: flex; flex-direction: column; }
+.spec-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 190px) 1fr;
+  gap: 6px 24px;
+  padding-block: 14px;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+.spec-row:first-child { border-top: 1px solid var(--line); }
+.spec-key {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.spec-val { color: var(--ink-dim); font-size: 16px; }
+.spec-val b { color: var(--ink); font-weight: 600; }
+.spec-val .num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+@media (max-width: 620px) {
+  .spec-row { grid-template-columns: 1fr; gap: 2px; padding-block: 12px; }
+}
+
+/* ---------------------------------------------------------------- pricing */
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 265px), 1fr));
+  gap: 16px;
+}
+.plan {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--raised);
+}
+/* Only the recommended plan is lifted. Border, fill and glow spent on one thing, so the
+   hierarchy reads at a glance instead of every box shouting equally. */
+.plan--lead {
+  border-color: var(--green-deep);
+  background: linear-gradient(180deg, #1d2a20 0%, var(--raised) 60%);
+}
+.plan-name {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 19px;
+  font-weight: 700;
+}
+.plan-price {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--ink);
+}
+.plan-price small {
+  font-size: 14px;
+  color: var(--ink-mute);
+  font-family: var(--body);
+}
+.plan-sub { font-size: 14px; color: var(--ink-dim); }
+.plan ul { margin: 0; padding-left: 18px; font-size: 15px; color: var(--ink-dim); }
+.plan li { margin-block: 5px; }
+
+.badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  align-self: flex-start;
+}
+.badge--green { color: var(--green); }
+.badge--amber { color: var(--amber); }
+
+.cta {
+  display: inline-block;
+  font-family: var(--display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 17px;
+  padding: 14px 30px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.cta--green { background: var(--green); color: #07140a; }
+.cta--red { background: var(--red); color: #fff; }
+.cta:hover { text-decoration: none; filter: brightness(1.08); }
+.cta-note { font-size: 13px; color: var(--ink-mute); font-family: var(--mono); }
+
+/* ---------------------------------------------------------------- misc */
+
+.callout {
+  border-left: 3px solid var(--amber);
+  padding: 4px 0 4px 16px;
+  color: var(--ink-dim);
+  font-size: 16px;
+}
+
+.notlist { margin: 0; padding-left: 18px; color: var(--ink-dim); }
+.notlist li { margin-block: 7px; }
+
+footer {
+  border-top: 1px solid var(--line);
+  padding-block: 32px 44px;
+  color: var(--ink-mute);
+  font-size: 14px;
+}
+footer .wrap { display: flex; flex-direction: column; gap: 10px; }
+footer a { color: var(--ink-dim); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* ---------------------------------------------------------------- legal prose */
+
+/*
+  Policy pages are read, not scanned, so they drop the spec-sheet treatment and get a single
+  measured column. Narrower than the marketing pages on purpose — legal text is the one place a
+  reader genuinely needs the 65-character line.
+*/
+.prose { max-width: 680px; }
+.prose h2 {
+  font-size: 22px;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+.prose h2:first-of-type { margin-top: 24px; }
+.prose h3 {
+  font-family: var(--body);
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 6px;
+}
+.prose p { margin-bottom: 14px; color: var(--ink-dim); max-width: none; }
+.prose ul { padding-left: 20px; color: var(--ink-dim); margin-bottom: 14px; }
+.prose li { margin-block: 7px; }
+.prose b, .prose strong { color: var(--ink); font-weight: 600; }
+
+.meta {
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-mute);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* The short "here is the whole policy in four lines" box at the top. Earns its border because
+   it is the only thing most readers will actually read. */
+.summary {
+  border: 1px solid var(--green-deep);
+  border-radius: 12px;
+  background: #19231b;
+  padding: 20px 22px;
+  margin-block: 24px;
+}
+.summary ul { margin: 0; padding-left: 18px; }
+.summary li { color: var(--ink); }
+
+.summary--cp {
+  border-color: #5a2328;
+  background: #1d1416;
+}
+
+/* Legal boilerplate that must stay shouty for enforceability, but should not shout at the
+   reader's eyes — small caps-ish treatment instead of full-size uppercase. */
+.legalese {
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  color: var(--ink-mute);
+  border-left: 2px solid var(--line);
+  padding-left: 14px;
+}
+
+/* ---------------------------------------------------------------- phones */
+
+/*
+  Below 520px the page is read one-handed, often outdoors in sunlight. Everything here is about
+  reclaiming width and making targets thumb-sized — not about hiding content, since a driver
+  checking a privacy policy on their phone needs the same text as on a desktop.
+*/
+@media (max-width: 520px) {
+  .topbar .wrap { padding-block: 8px; gap: 6px; }
+  .wordmark { font-size: 20px; }
+  .topbar nav { width: 100%; margin-left: 0; justify-content: flex-start; }
+
+  .hero { flex-direction: column; align-items: flex-start; }
+  .hero img { width: 84px; height: 84px; border-radius: 20px; }
+
+  .tile img { width: 76px; height: 76px; }
+
+  /* Full-width buttons: easier to hit, and they stop looking stranded on a narrow column. */
+  .cta { align-self: stretch; width: 100%; }
+
+  .plan { padding: 20px; }
+  .plan-price { font-size: 30px; }
+
+  .prose h2 { margin-top: 32px; }
+  .summary { padding: 16px 18px; }
+}
+
+/* Very small / older Android screens (360px and under) — the Galaxy A-series floor. */
+@media (max-width: 360px) {
+  .plan-price { font-size: 27px; }
+  .tile h2 { font-size: 26px; }
+  .spec-key { font-size: 15px; }
+}
+
+/* Large desktops: stop the measure growing forever, but let the page breathe. */
+@media (min-width: 1240px) {
+  .hero { padding-block: 60px 48px; }
+}
+
+/* Printing a policy is a real thing people do with these two pages. */
+@media print {
+  .topbar, .ticks, footer, .cta { display: none; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .prose p, .prose li, .summary li { color: #000; }
+  .summary { border: 1px solid #999; background: #f4f4f4; }
+  a { color: #000; text-decoration: underline; }
+}

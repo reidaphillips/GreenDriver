@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#14181a">
+<meta name="description" content="Android apps for gig delivery drivers. Mileage, real pay and tax paperwork, plus a compass that tells you when it is wrong.">
+<title>GreenDriver Mileage Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Green<span class="accent">Driver</span></a>
+    <nav>
+      <a href="greendriver.html" aria-current="page">Mileage Tracker</a>
+      <a href="compass.html">Compass GD</a>
+    </nav>
+  </div>
+</header>
+<div class="ticks"></div>
+
+<main>
+  <div class="wrap">
+    <div class="hero">
+      <img src="greendriver.png" alt="GreenDriver Mileage Tracker icon">
+      <div class="hero-text">
+        <p class="eyebrow">Android 8.0 and up</p>
+        <h1>Mileage Tracker</h1>
+        <p class="lede">
+          Every mile you drive for work is worth <b>76¢</b> off your taxable income. This app
+          records them while you drive, prices them at the correct IRS rate, and hands your
+          preparer a document that survives an audit.
+        </p>
+        <a class="cta cta--green" href="#pricing">Start the 10-day trial</a>
+        <p class="cta-note">No card for the trial. Cancel in Play Store.</p>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap stack">
+      <h2>What it does</h2>
+      <div class="spec">
+
+        <div class="spec-row">
+          <div class="spec-key">Mileage</div>
+          <div class="spec-val">
+            GPS logs the route while the screen is off and while you deliver on foot.
+            <b>Auto-Drive</b> notices you have started moving and offers to open a trip, so a
+            forgotten tap is not a lost deduction.
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-key">Corrected distance</div>
+          <div class="spec-val">
+            Raw GPS reads long. Each vehicle learns its own correction factor from the odometer
+            readings you type in — on the test car it holds within
+            <span class="num">±1.5%</span> of the dash.
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-key">OBD-II</div>
+          <div class="spec-val">
+            Optional <span class="num">$20</span> Bluetooth dongle reads speed straight off the
+            engine bus, which is what the odometer itself counts. Used to calibrate GPS rather
+            than replace it.
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-key">Real pay</div>
+          <div class="spec-val">
+            Take-home <b>$/hour after fuel and vehicle cost</b>, broken out per platform, so you
+            can see which one actually paid better this week. Not the advertised block rate.
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-key">Amazon Flex caps</div>
+          <div class="spec-val">
+            <span class="num">40 h</span> per rolling 7 days, <span class="num">8 h</span> a day
+            — <span class="num">50</span> and <span class="num">10</span> in peak. Counts blocks
+            you have accepted but not yet driven, and shows which upcoming days are already full.
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-key">Expenses</div>
+          <div class="spec-val">
+            Fuel, maintenance, insurance, tolls, parking. Receipt scanning reads the amount,
+            vendor and date on the phone — no image is ever uploaded.
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-key">Which method wins</div>
+          <div class="spec-val">
+            Standard mileage against actual expenses, side by side, <b>including MACRS vehicle
+            depreciation</b> — the piece most trackers leave out, and the one that can reverse
+            the answer on a car you own.
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-key">Tax paperwork</div>
+          <div class="spec-val">
+            Self-employment tax estimate, quarterly summaries, a PDF report, CSV, and an
+            audit-readiness check against what <b>IRS Pub. 463</b> actually requires — flagged
+            trip by trip.
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-key">Your data</div>
+          <div class="spec-val">
+            Stays on the phone. No account, no server, no ads, no advertising ID. Two-generation
+            backup to a folder you pick.
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-key">Languages</div>
+          <div class="spec-val">
+            English, Español, Português, Русский, Türkçe, O‘zbekcha, Українська, العربية
+            (right-to-left supported).
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap stack">
+      <h2>Pricing</h2>
+      <p class="lede">Ten days free. No card up front.</p>
+
+      <div class="plans">
+
+        <div class="plan">
+          <span class="plan-name">Basic</span>
+          <span class="plan-price">$3.99<small> /month</small></span>
+          <span class="plan-sub">Billed monthly</span>
+          <ul>
+            <li>Automatic GPS mileage, screen off and on foot</li>
+            <li>Auto-Drive trip detection</li>
+            <li>Learned per-vehicle distance correction</li>
+            <li>Real $/hour by platform</li>
+            <li>Amazon Flex hour-cap forecast</li>
+            <li>Expense logging</li>
+            <li>CSV export and local backup</li>
+          </ul>
+        </div>
+
+        <div class="plan plan--lead">
+          <span class="badge badge--green">Best value</span>
+          <span class="plan-name">Full</span>
+          <span class="plan-price">$4.99<small> /month</small></span>
+          <span class="plan-sub">Pre-paid yearly — $59.88 once</span>
+          <ul>
+            <li><b>Everything in Basic</b></li>
+            <li>Standard mileage vs actual expenses</li>
+            <li>MACRS vehicle depreciation</li>
+            <li>Self-employment tax estimate</li>
+            <li>Quarterly summaries</li>
+            <li>IRS Pub. 463 audit-readiness report</li>
+            <li>PDF report and tax-preparer ZIP</li>
+            <li>Receipt scanning with OCR</li>
+            <li>OBD-II odometer calibration</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <a class="cta cta--green" href="#">Get it on Google Play</a>
+      <p class="cta-note">Link goes live when the listing is published.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap stack">
+      <h2>What it is not</h2>
+      <ul class="notlist">
+        <li>
+          <b>Not connected to any platform.</b> It does not log in to Amazon Flex, DoorDash or
+          anyone else, and cannot read your account. It records your own driving.
+        </li>
+        <li>
+          <b>Not tax advice.</b> The deduction and depreciation figures are estimates to hand a
+          preparer. Anything resting on a tax year outside the published tables is flagged for
+          checking rather than guessed.
+        </li>
+        <li>
+          <b>Not a route optimiser</b>, and not a job finder.
+        </li>
+        <li>
+          <b>Not reliable with battery optimisation on.</b> Android will kill background
+          tracking. The app walks you through turning it off — it is the one setup step that
+          matters.
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>GreenDriver · Spokane, Washington</span>
+    <span><a href="index.html">Home</a> · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms</a></span>
+  </div>
+</footer>
+</body>
+</html>
