@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#14181a">
+<meta name="description" content="Free Android app that switches the flashlight off when the Amazon Flex app leaves it on. No internet permission, no tracking, no ads.">
+<title>Torch Lock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Green<span class="accent">Driver</span></a>
+    <nav>
+      <a href="greendriver.html">Mileage Tracker</a>
+      <a href="compass.html">Compass GD</a>
+      <a href="torchlock.html" aria-current="page">Torch Lock</a>
+    </nav>
+  </div>
+</header>
+<div class="ticks"></div>
+
+<main>
+  <div class="wrap">
+    <div class="hero">
+      <img src="torchlock.png" alt="Torch Lock icon">
+      <div class="hero-text">
+        <p class="eyebrow">Android 8.0 and up · free</p>
+        <h1>Torch Lock</h1>
+        <p class="lede">
+          If the Amazon Flex app leaves your flashlight on after scanning, this switches it off.
+          Free, no ads, no account — and it has no internet permission at all, so it cannot send
+          anything anywhere.
+        </p>
+        <a class="cta cta--green" href="bin/TorchLock-1.0.0.apk" download>Download free · 6.7 MB</a>
+        <p class="cta-note">Direct APK. Not on Google Play.</p>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap stack">
+      <h2>The problem</h2>
+      <p>
+        The Amazon Flex app turns on your phone's flashlight to read barcodes in low light. On a
+        lot of Android phones it does not reliably turn it back off — so the torch stays burning
+        after the scan, through the next stop, sometimes for the rest of the block.
+      </p>
+      <p>
+        That costs you battery on the one device you cannot afford to lose mid-route, it heats the
+        phone enough that some models throttle, and in a dark stairwell it is simply in your way.
+        Toggling it off by hand works until the next scan turns it on again.
+      </p>
+      <p class="callout">
+        This is a bug in someone else's app and it is worth reporting to Amazon. Torch Lock is a
+        workaround so you do not have to wait for them.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap stack">
+      <h2>What it does</h2>
+      <div class="spec">
+
+        <div class="spec-row">
+          <div class="spec-key">Switches it off</div>
+          <div class="spec-val">
+            Watches the torch and turns it off the moment anything turns it on — Flex, a stray
+            tap on the quick-settings tile, a pocket press. You see a flicker instead of a light.
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-key">Waits out the scanner</div>
+          <div class="spec-val">
+            While Flex is still holding the camera, <b>no app on Android can take the torch from
+            it</b> — that is enforced by the operating system. Torch Lock shows
+            <b>WAIT</b> and keeps trying, so the torch goes out the instant Flex lets go.
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-key">Stays on</div>
+          <div class="spec-val">
+            Set it once. It survives a reboot and restarts itself if Android stops it for memory.
+            A silent notification sits at the bottom of your shade with a one-tap Stop.
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-key">Counts them</div>
+          <div class="spec-val">
+            Shows how many times it has switched the torch back off, so you can see for yourself
+            how often it is happening.
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-key">Battery</div>
+          <div class="spec-val">
+            Negligible. It sleeps on a system callback and does nothing until the torch changes
+            state. Far less than leaving the flashlight burning.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap stack">
+      <h2>It cannot track you</h2>
+      <p>
+        Not a promise — a property of how it is built, and you can check it on your own phone in
+        about ten seconds. These are all the permissions it asks for:
+      </p>
+      <div class="spec">
+        <div class="spec-row">
+          <div class="spec-key">Foreground service</div>
+          <div class="spec-val">Keeps it running when you leave the app.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-key">Notifications</div>
+          <div class="spec-val">The ongoing notice Android requires for the above.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-key">Run at startup</div>
+          <div class="spec-val">So it is still working after you restart your phone.</div>
+        </div>
+      </div>
+      <p>
+        <b>There is no internet permission.</b> Android itself blocks every outbound connection an
+        app without it attempts, so Torch Lock cannot send your data anywhere regardless of what
+        its code says. There is no camera permission either — switching a torch does not need one.
+      </p>
+      <p>
+        No analytics, no crash reporting, no advertising, no account, no advertising ID. It stores
+        one on/off setting and a counter, in its own private storage. Uninstalling removes them.
+      </p>
+      <p>
+        Open <b>Settings → Apps → Torch Lock → Permissions</b> after installing and you will see
+        the list above and nothing else.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap stack">
+      <h2>Installing</h2>
+      <p>
+        It is not on Google Play, so Android will ask whether to allow installing from this
+        source. That prompt appears for any app distributed as an APK. Download, open the file,
+        allow when asked, then open Torch Lock and turn the switch on.
+      </p>
+      <p>
+        If you want to confirm the file you downloaded is the one published here, its SHA-256 is
+        <span style="font-family:var(--mono);font-size:13px;word-break:break-all">de40d370ef332c7d55691c9351f919201d11cab6cdc770f4f64f608d4bd62e3b</span>
+        — also at <a href="bin/SHA256SUMS.txt">bin/SHA256SUMS.txt</a>.
+      </p>
+      <a class="cta cta--green" href="bin/TorchLock-1.0.0.apk" download>Download free · 6.7 MB</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap stack">
+      <h2>What it is not</h2>
+      <ul class="notlist">
+        <li>
+          <b>Not a hardware lock.</b> Android gives no way to stop the torch being switched on,
+          only to switch it off afterwards. Expect a brief flicker, not darkness.
+        </li>
+        <li>
+          <b>Not able to override an app holding the camera.</b> Nothing can. It waits and
+          switches the torch off the second that app releases it.
+        </li>
+        <li>
+          <b>Not affiliated with Amazon</b> in any way, and it does not connect to the Flex app,
+          read from it, or interfere with it. It only switches off a light.
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>GreenDriver · Spokane, Washington</span>
+    <span>
+      <a href="index.html">Home</a> ·
+      <a href="terms.html">Terms</a>
+    </span>
+    <span>© Reid Phillips 2026/2027</span>
+  </div>
+</footer>
+
+</body>
+</html>

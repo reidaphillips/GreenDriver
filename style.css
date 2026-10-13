@@ -474,3 +474,8 @@ footer a { color: var(--ink-dim); }
   .summary { border: 1px solid #999; background: #f4f4f4; }
   a { color: #000; text-decoration: underline; }
 }
+
+/* Torch Lock tile — amber, so the three apps read as distinct at a glance without the third
+   competing with the two paid ones for attention. */
+.tile--tl:hover { border-color: var(--amber); }
+.tile--tl .tile-go { color: var(--amber); }
